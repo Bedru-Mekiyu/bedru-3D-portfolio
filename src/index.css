@@ -7,6 +7,7 @@
 
 html,
 body {
+  font-size: 90%;
   width: 100dvw;
   overflow-x: hidden;
   background-color: black;
@@ -23,7 +24,7 @@ section {
   --font-sans: "Mona Sans", sans-serif;
   --color-white-50: #d9ecff;
   --color-black-50: #1c1c21;
-  --color-black-100: #0e0e10;
+  --color-black-100: #050507;
   --color-black-200: #282732;
   --color-blue-50: #839cb5;
   --color-blue-100: #2d2d38;
@@ -85,7 +86,7 @@ section {
   }
 
   .hero-text {
-    @apply flex flex-col justify-center md:text-[60px] text-[30px] font-semibold relative z-10 pointer-events-none;
+    @apply flex flex-col justify-center md:text-[48px] text-[24px] font-semibold relative z-10 pointer-events-none;
     img {
       @apply size-8 md:size-10 object-contain;
     }
@@ -145,7 +146,7 @@ section {
       @apply flex;
 
       .inner {
-        @apply px-5 py-2 rounded-lg bg-white text-black group-hover:bg-black-50 transition-colors duration-300;
+        @apply px-5 py-2 rounded-lg bg-blue-50 text-black group-hover:bg-blue-100 transition-colors duration-300;
 
         span {
           @apply group-hover:text-white transition-colors duration-300;
@@ -207,7 +208,7 @@ section {
   }
 
   .cta-button {
-    @apply px-4 py-4 rounded-lg bg-black-200 flex justify-center items-center relative cursor-pointer overflow-hidden;
+    @apply px-4 py-4 rounded-lg bg-blue-50 group-hover:bg-blue-100 transition-colors duration-300 flex justify-center items-center relative cursor-pointer overflow-hidden;
 
     .bg-circle {
       @apply absolute -right-10 origin-center top-1/2 -translate-y-1/2 
@@ -289,7 +290,7 @@ section {
     }
 
     a {
-      @apply w-full py-4 bg-white text-black font-semibold rounded-md flex justify-center items-center gap-2;
+      @apply w-full py-4 bg-blue-50 text-black font-semibold rounded-md flex justify-center items-center gap-2;
 
       img {
         @apply inline-block;
