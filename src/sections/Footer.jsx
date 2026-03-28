@@ -1,11 +1,17 @@
 import { socialImgs } from "../constants";
 
 const Footer = () => {
+  const handleTermsClick = () => {
+    sessionStorage.setItem("home-scroll-y", String(window.scrollY));
+  };
+
   return (
     <footer className="footer">
       <div className="footer-container">
         <div className="flex flex-col justify-center">
-          <p>Terms & Conditions</p>
+          <a href="#/terms-and-conditions" onClick={handleTermsClick}>
+            Terms & Conditions
+          </a>
         </div>
         <div className="socials">
           {socialImgs.map((socialImg, index) => (
