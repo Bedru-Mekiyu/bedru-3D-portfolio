@@ -4,10 +4,18 @@
  * with a small offset from the top for better visual placement.
  */
 
-const Button = ({ text, className, id }) => {
+const Button = ({ text, className, id, href, download, target, rel }) => {
+  const shouldScrollToCounter = Boolean(id) && !href;
+
   return (
     <a
+      href={href ?? "#"}
+      download={download}
+      target={target}
+      rel={rel ?? (target === "_blank" ? "noopener noreferrer" : undefined)}
       onClick={(e) => {
+        if (!shouldScrollToCounter) return;
+
         e.preventDefault(); // Stop the link from jumping instantly
 
         const target = document.getElementById("counter"); // Find the section with ID "counter"
