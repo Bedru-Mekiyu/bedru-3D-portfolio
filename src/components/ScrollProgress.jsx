@@ -32,7 +32,7 @@ const ScrollProgress = () => {
 
       {/* Animated progress fill */}
       <div
-        className="progress-fill h-full bg-gradient-to-r from-primary via-accent-amber to-accent-cyan relative"
+        className="progress-fill h-full bg-gradient-to-r from-primary via-amber-400 to-accent relative"
         style={{ width: `${progress}%` }}
       >
         {/* Glow effect */}
@@ -40,7 +40,7 @@ const ScrollProgress = () => {
 
         {/* Leading glow dot */}
         <div
-          className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-[0_0_20px_rgba(255,255,255,0.8),0_0_40px_rgba(205,124,46,0.6)]"
+          className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-elevation"
           style={{ transform: 'translateX(50%) translateY(-50%)' }}
         />
       </div>

@@ -3,12 +3,10 @@ import gsap from 'gsap';
 
 const LoadingIntro = ({ onComplete }) => {
   const [visible, setVisible] = useState(true);
-  const [phase, setPhase] = useState('logo'); // 'logo' -> 'text' -> 'complete'
 
   useEffect(() => {
     const tl = gsap.timeline({
       onComplete: () => {
-        setPhase('complete');
         setTimeout(() => {
           setVisible(false);
           onComplete?.();
@@ -25,7 +23,7 @@ const LoadingIntro = ({ onComplete }) => {
     )
     // Logo glow pulse
     .to('.intro-logo', {
-      filter: 'drop-shadow(0 0 30px rgba(205, 124, 46, 0.8))',
+      filter: 'brightness(1.08)',
       duration: 0.8,
       yoyo: true,
       repeat: 1,
@@ -68,7 +66,7 @@ const LoadingIntro = ({ onComplete }) => {
       {/* Animated background mesh */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-1/4 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[100px] animate-pulse" />
-        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-accent-cyan/8 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '0.5s' }} />
+        <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-accent/10 rounded-full blur-[120px] animate-pulse" style={{ animationDelay: '0.5s' }} />
       </div>
 
       {/* Grid pattern overlay */}
@@ -83,7 +81,7 @@ const LoadingIntro = ({ onComplete }) => {
       <div className="relative z-10 flex flex-col items-center">
         {/* Logo */}
         <div className="intro-logo relative mb-8">
-          <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-primary via-primary-hover to-accent-amber flex items-center justify-center shadow-[0_0_60px_rgba(205,124,46,0.5)]">
+          <div className="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-primary via-primary-hover to-amber-400 flex items-center justify-center shadow-elevation">
             <span className="text-4xl md:text-5xl font-bold text-black">B</span>
           </div>
           {/* Rotating ring */}
@@ -103,7 +101,7 @@ const LoadingIntro = ({ onComplete }) => {
 
         {/* Progress bar */}
         <div className="w-48 md:w-64 h-1 bg-white/10 rounded-full overflow-hidden">
-          <div className="intro-progress h-full bg-gradient-to-r from-primary via-accent-amber to-primary rounded-full shadow-[0_0_20px_rgba(205,124,46,0.5)]" />
+          <div className="intro-progress h-full bg-gradient-to-r from-primary via-amber-400 to-primary rounded-full shadow-elevation" />
         </div>
 
         {/* Loading text */}

@@ -44,11 +44,11 @@ const Contact = () => {
       <div className="w-full h-full md:px-10 px-5">
         <TitleHeader
           title="Get in Touch – Let’s Connect"
-          sub="💬 Have questions or ideas? Let’s talk! 🚀"
+          sub="Have questions or ideas? Let’s talk."
         />
-        <div className="grid-12-cols mt-16">
-          <div className="xl:col-span-5">
-            <div className="flex-center card-border rounded-xl p-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mt-16">
+          <div className="lg:col-span-5">
+            <div className="flex-center card-border rounded-[var(--radius-lg)] p-8 md:p-10 shadow-elevation">
               <form
                 ref={formRef}
                 onSubmit={handleSubmit}
@@ -93,7 +93,7 @@ const Contact = () => {
                   />
                 </div>
 
-                <button type="submit">
+                <button type="submit" aria-busy={loading} disabled={loading}>
                   <div className="cta-button group">
                     <div className="bg-circle" />
                     <p className="text">
@@ -107,8 +107,8 @@ const Contact = () => {
               </form>
             </div>
           </div>
-          <div className="xl:col-span-7 min-h-96">
-            <div className="bg-[#cd7c2e] w-full h-full hover:cursor-grab rounded-3xl overflow-hidden">
+          <div className="lg:col-span-7 min-h-96">
+            <div className="bg-primary w-full h-full hover:cursor-grab rounded-[var(--radius-lg)] overflow-hidden shadow-elevation">
               <ContactExperience />
             </div>
           </div>

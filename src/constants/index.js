@@ -71,6 +71,55 @@ const logoIconsList = [
   },
 ];
 
+/** Editorial case-study content for the work section (image paths match existing assets). */
+const showcaseProjects = [
+  {
+    layout: "featured",
+    index: "01",
+    category: "Product · Mobile",
+    title: "Ryde",
+    headline: "Ride-hailing with zero friction from request to pickup.",
+    context:
+      "Dense logistics behind the scenes, but the rider only feels clarity: status, ETA, and trust at a glance.",
+    outcome:
+      "Shipped as a native-feeling Expo app with Tailwind-driven UI consistency across flows.",
+    stack: ["React Native", "Expo", "Tailwind CSS"],
+    imgPath: "/images/project1.png",
+    alt: "Ryde ride-hailing app interface",
+    href: "#contact",
+  },
+  {
+    layout: "compact",
+    index: "02",
+    category: "Web · Operations",
+    title: "Library OS",
+    headline: "Circulation and inventory in one calm dashboard.",
+    context:
+      "Libraries juggle vendors, patrons, and stock—tool sprawl was slowing every decision.",
+    outcome:
+      "Unified search, roles, and alerts so admins ship faster with fewer handoffs.",
+    stack: ["React", "Node.js", "PostgreSQL"],
+    imgPath: "/images/project2.png",
+    alt: "Library management platform",
+    href: "#contact",
+  },
+  {
+    layout: "compact",
+    index: "03",
+    category: "Web · Discovery",
+    title: "YC Directory",
+    headline: "A curated lens on early-stage teams.",
+    context:
+      "Startup discovery was noisy; the brief was signal over endless scroll.",
+    outcome:
+      "Editorial typography, tight hierarchy, and fast filters for scannable profiles.",
+    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    imgPath: "/images/project3.png",
+    alt: "YC Directory startup showcase",
+    href: "#contact",
+  },
+];
+
 const abilities = [
   {
     imgPath: "/images/seo.png",
@@ -244,22 +293,32 @@ const testimonials = [
   },
 ];
 
+/** Footer social links. Set `href` to your profiles; Telegram uses https://t.me/yourusername */
 const socialImgs = [
   {
-    name: "insta",
+    name: "Instagram",
     imgPath: "/images/insta.png",
+    href: "https://www.instagram.com/",
   },
   {
-    name: "fb",
+    name: "Facebook",
     imgPath: "/images/fb.png",
+    href: "https://www.facebook.com/",
   },
   {
-    name: "x",
+    name: "X",
     imgPath: "/images/x.png",
+    href: "https://x.com/",
   },
   {
-    name: "linkedin",
+    name: "LinkedIn",
     imgPath: "/images/linkedin.png",
+    href: "https://www.linkedin.com/",
+  },
+  {
+    name: "Telegram",
+    imgPath: "/images/telegram.svg",
+    href: "https://t.me/",
   },
 ];
 
@@ -275,4 +334,5 @@ export {
   techStackIcons,
   techStackImgs,
   navLinks,
+  showcaseProjects,
 };
