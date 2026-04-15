@@ -109,16 +109,17 @@ const showcaseProjects = [
   {
     layout: "compact",
     index: "03",
-    category: "Web · Discovery",
-    title: "YC Directory",
-    headline: "A curated lens on early-stage teams.",
+    category: "Web · Records Management",
+    title: "Vital Registration App",
+    headline:
+      "A web-based system for recording and managing essential life or health-related data in a structured digital format.",
     context:
-      "Startup discovery was noisy; the brief was signal over endless scroll.",
+      "The platform lets users input, store, and track important records with better accessibility and organization than manual record-keeping.",
     outcome:
-      "Editorial typography, tight hierarchy, and fast filters for scannable profiles.",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+      "Demonstrates core software engineering concepts including data management, CRUD operations, and efficient digital handling of vital records.",
+    stack: ["Data Management", "CRUD Operations", "Digital Records"],
     imgPath: "/images/project3.png",
-    alt: "YC Directory startup showcase",
+    alt: "Vital Registration App records dashboard",
     href: "#contact",
   },
 ];
@@ -251,14 +252,14 @@ const expCards = [
     ],
   },
   {
-    review: "bedru’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
+    review: "bedru’s work on MongoDB database integration brought a high level of quality and efficiency. He delivered solutions that enhanced our data management & meet our product goals.",
     imgPath: "/images/exp3.png",
     logoPath: "/images/logo3.png",
-    title: "React Native Developer",
+    title: "Database Developer",
     date: "March 2019 - May 2020",
     responsibilities: [
-      "Built cross-platform mobile apps using React Native, integrating with Appwrite's backend services.",
-      "Improved app performance and user experience through code optimization and testing.",
+      "Built cross-platform mobile apps using React Native, integrating with MongoDB database.",
+      "Improved database performance and user experience through query optimization and testing.",
       "Coordinated with the product team to implement features based on feedback.",
     ],
   },
@@ -344,12 +345,12 @@ const socialImgs = [
   {
     name: "LinkedIn",
     imgPath: "/images/linkedin.png",
-    href: "https://www.linkedin.com/",
+    href: "https://www.linkedin.com/in/bedru-mekiyu-39ba6736a",
   },
   {
     name: "Telegram",
     imgPath: "/images/telegram.svg",
-    href: "https://t.me/",
+    href: "tg://resolve?domain=fakiya2695",
   },
 ];
 

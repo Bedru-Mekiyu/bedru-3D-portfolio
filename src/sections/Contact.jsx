@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 
 import TitleHeader from "../components/TitleHeader";
@@ -7,11 +7,19 @@ import ContactExperience from "../components/models/contact/ContactExperience";
 const Contact = () => {
   const formRef = useRef(null);
   const [loading, setLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
   const [form, setForm] = useState({
     name: "",
     email: "",
     message: "",
   });
+
+  useEffect(() => {
+    if (successMessage) {
+      const timer = setTimeout(() => setSuccessMessage(""), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [successMessage]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,6 +30,12 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true); // Show loading state
 
+    if (!import.meta.env.VITE_APP_EMAILJS_SERVICE_ID || !import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID || !import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY) {
+      setSuccessMessage("EmailJS environment variables are not set. Please configure them.");
+      setLoading(false);
+      return;
+    }
+
     try {
       await emailjs.sendForm(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
@@ -30,10 +44,12 @@ const Contact = () => {
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       );
 
+      setSuccessMessage("Message sent successfully!");
       // Reset form and stop loading
       setForm({ name: "", email: "", message: "" });
     } catch (error) {
-      console.error("EmailJS Error:", error); // Optional: show toast
+      console.error("EmailJS Error:", error);
+      setSuccessMessage("Failed to send message. Please try again.");
     } finally {
       setLoading(false); // Always stop loading, even on error
     }
@@ -94,16 +110,13 @@ const Contact = () => {
                 </div>
 
                 <button type="submit" aria-busy={loading} disabled={loading}>
-                  <div className="cta-button group">
-                    <div className="bg-circle" />
+                  <div className="cta-button-secondary">
                     <p className="text">
                       {loading ? "Sending..." : "Send Message"}
                     </p>
-                    <div className="arrow-wrapper">
-                      <img src="/images/arrow-down.svg" alt="arrow" />
-                    </div>
                   </div>
                 </button>
+                {successMessage && <p className="success-message mt-4 text-center">{successMessage}</p>}
               </form>
             </div>
           </div>

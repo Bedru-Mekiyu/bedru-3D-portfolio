@@ -54,9 +54,9 @@ const NavBar = () => {
           </ul>
         </nav>
 
-        <a href="#contact" className="contact-btn group">
-          <div className="inner">
-            <span>Contact me</span>
+        <a href="#contact" className="cta-wrapper">
+          <div className="cta-button-secondary">
+            <p className="text">Contact me</p>
           </div>
         </a>
 

@@ -39,19 +39,12 @@ const Button = ({
       className={`${className ?? ""} cta-wrapper`}
     >
       {isSecondary ? (
-        <div className="cta-button-secondary group">
+        <div className="cta-button-secondary">
           <p className="text pl-1 pr-12">{text}</p>
-          <div className="arrow-wrapper">
-            <img src="/images/arrow-down.svg" alt="" />
-          </div>
         </div>
       ) : (
-        <div className="cta-button group">
-          <div className="bg-circle" />
+        <div className="cta-button-secondary">
           <p className="text">{text}</p>
-          <div className="arrow-wrapper">
-            <img src="/images/arrow-down.svg" alt="" />
-          </div>
         </div>
       )}
     </a>

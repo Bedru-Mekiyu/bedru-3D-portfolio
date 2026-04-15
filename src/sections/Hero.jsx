@@ -84,7 +84,7 @@ const Hero = () => {
               />
               <Button
                 text="Resume"
-                variant="secondary"
+                variant="primary"
                 className="md:w-52 md:h-14 w-44 h-11"
                 href="/resume.pdf"
                 download
